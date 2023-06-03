@@ -5,8 +5,8 @@ import 'package:production_pool/constant/main_root_config.dart';
 
 import '../view_model/timer_model.dart';
 
-class Timer extends HookConsumerWidget {
-  Timer({super.key});
+class Recode extends HookConsumerWidget {
+  Recode({super.key});
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -18,7 +18,7 @@ class Timer extends HookConsumerWidget {
           backgroundColor: Colors.white,
           title: const Center(
             child: Text(
-              'デザイン',
+              'レコード',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 24,

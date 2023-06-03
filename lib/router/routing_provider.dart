@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../constant/main_root_config.dart';
+import '../view/recode.dart';
 import '../view/top.dart';
 
 part 'routing_provider.g.dart';
@@ -12,17 +13,24 @@ GoRouter routing(RoutingRef ref) {
   return GoRouter(
       routerNeglect: true,
       debugLogDiagnostics: true,
-      initialLocation: MainRoute.top.path,
+      initialLocation: MainRoute.measurement.path,
       errorBuilder: (context, state) {
-        context.goNamed(MainRoute.top.path);
+        context.goNamed(MainRoute.measurement.path);
         return const SizedBox();
       },
       routes: [
         GoRoute(
-          path: MainRoute.top.path,
-          name: MainRoute.top.name,
+          path: MainRoute.record.path,
+          name: MainRoute.record.name,
           pageBuilder: (context, state) {
-            return MaterialPage(child: Top());
+            return MaterialPage(child: Recode());
+          },
+        ),
+        GoRoute(
+          path: MainRoute.measurement.path,
+          name: MainRoute.measurement.name,
+          pageBuilder: (context, state) {
+            return MaterialPage(child: Timer());
           },
         )
       ]);

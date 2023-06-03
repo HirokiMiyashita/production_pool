@@ -1,5 +1,6 @@
 enum MainRoute {
-  top(name: '/', path: '/');
+  measurement(name: '/', path: '/'),
+  record(name: '/recode', path: '/recode');
 
   final String name;
   final String path;
