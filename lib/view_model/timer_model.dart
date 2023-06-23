@@ -81,7 +81,7 @@ class TimerModel extends HookConsumerWidget {
         child: const Padding(
           padding: EdgeInsets.only(left: 40.0, right: 40.0, top: 4, bottom: 4),
           child: Text(
-            '計測を終了する',
+            '計測を終了',
             style: TextStyle(fontSize: 36, color: Colors.white),
           ),
         ),
