@@ -14,7 +14,6 @@ class TimerModel extends HookConsumerWidget {
     final cancelFlg = useState(false);
 
     final counter = useState(0);
-    final isFinish = useState(false);
 
     void startTimer() {
       cancelFlg.value = true;
@@ -35,10 +34,8 @@ class TimerModel extends HookConsumerWidget {
         onTap: () {},
         child: Image.asset(
           'assets/images/top_banner.png',
-          // width: MediaQuery.of(context).size.width * 0.9,
         ),
       ),
-      // Lottie(composition: LottieComposition)
       Column(
         children: [
           Lottie.asset(
@@ -48,7 +45,6 @@ class TimerModel extends HookConsumerWidget {
           ),
         ],
       ),
-      // Expanded(child: Text(counter.value.toString())),
       Container(
         alignment: Alignment.bottomCenter,
         child: ElevatedButton(
@@ -69,6 +65,24 @@ class TimerModel extends HookConsumerWidget {
               style: TextStyle(
                   fontSize: 36, color: cancelFlg.value ? Colors.indigo : null),
             ),
+          ),
+        ),
+      ),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.red,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
+        onPressed: () {
+          !cancelFlg.value ? startTimer() : stopTimer();
+        },
+        child: const Padding(
+          padding: EdgeInsets.only(left: 40.0, right: 40.0, top: 4, bottom: 4),
+          child: Text(
+            '計測を終了する',
+            style: TextStyle(fontSize: 36, color: Colors.white),
           ),
         ),
       ),

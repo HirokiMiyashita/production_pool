@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:production_pool/router/routing_provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
-  // await dotenv.load();
+  await dotenv.load(fileName: '.env');
   //URLの末尾の#を消すため
   setPathUrlStrategy();
+  await Supabase.initialize(
+    url: dotenv.get('VAR_URL'), // .envのURLを取得.
+    anonKey: dotenv.get('VAR_ANONKEY'), // .envのanonキーを取得.
+  );
   // //Initialized
   // WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: App()));
