@@ -12,7 +12,6 @@ class TimerModel extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cancelFlg = useState(false);
-
     final counter = useState(0);
 
     void startTimer() {
