@@ -13,9 +13,10 @@ class Recode extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        key: scaffoldKey,
-        appBar: CostomAppBar(scaffoldKey: scaffoldKey),
-        drawer: const AppDrawer(),
-        body: const Record());
+      key: scaffoldKey,
+      appBar: CostomAppBar(scaffoldKey: scaffoldKey),
+      drawer: const AppDrawer(),
+      body: const Record(),
+    );
   }
 }
