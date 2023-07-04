@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:production_pool/constant/main_root_config.dart';
 
+import '../component/app_bar.dart';
+import '../view_model/record_model.dart';
 import '../view_model/timer_model.dart';
 
 class Recode extends HookConsumerWidget {
@@ -14,36 +16,7 @@ class Recode extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         key: scaffoldKey,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: const Center(
-            child: Text(
-              'レコード',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          leading: IconButton(
-            color: Colors.black,
-            iconSize: 40,
-            onPressed: () {
-              scaffoldKey.currentState!.openDrawer();
-            },
-            icon: const Icon(Icons.supervised_user_circle_rounded),
-          ),
-          actions: <Widget>[
-            Row(
-              children: [
-                Text(
-                  DateTime.now().toString(),
-                  style: const TextStyle(color: Colors.black),
-                )
-              ],
-            ),
-          ],
-        ),
+        appBar: CostomAppBar(),
         drawer: Drawer(
           child: Column(
             children: [
@@ -96,6 +69,6 @@ class Recode extends HookConsumerWidget {
             ],
           ),
         ),
-        body: SingleChildScrollView(child: TimerModel()));
+        body: const Record());
   }
 }
