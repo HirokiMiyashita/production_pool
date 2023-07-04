@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../constant/main_root_config.dart';
-import '../view/recode.dart';
 import '../view/top.dart';
+import '../view_model/record_model.dart';
 
 part 'routing_provider.g.dart';
 
@@ -23,7 +23,7 @@ GoRouter routing(RoutingRef ref) {
           path: MainRoute.record.path,
           name: MainRoute.record.name,
           pageBuilder: (context, state) {
-            return MaterialPage(child: Recode());
+            return const MaterialPage(child: RecordModel());
           },
         ),
         GoRoute(

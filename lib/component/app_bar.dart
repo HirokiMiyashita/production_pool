@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CostomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  CostomAppBar({super.key, required this.scaffoldKey});
+  const CostomAppBar({super.key, required this.scaffoldKey});
 
-  GlobalKey<ScaffoldState> scaffoldKey;
+  final GlobalKey<ScaffoldState> scaffoldKey;
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 

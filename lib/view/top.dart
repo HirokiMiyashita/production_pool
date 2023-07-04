@@ -16,7 +16,7 @@ class Timer extends HookConsumerWidget {
       key: scaffoldKey,
       appBar: CostomAppBar(scaffoldKey: scaffoldKey),
       drawer: const AppDrawer(),
-      body: SingleChildScrollView(child: TimerModel()),
+      body: const SingleChildScrollView(child: TimerModel()),
     );
   }
 }

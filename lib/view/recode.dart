@@ -3,11 +3,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:production_pool/component/drawer.dart';
 
 import '../component/app_bar.dart';
-import '../view_model/record_model.dart';
 
 class Recode extends HookConsumerWidget {
-  Recode({super.key});
-
+  Recode({super.key, required this.item});
+  final List item;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -16,7 +15,12 @@ class Recode extends HookConsumerWidget {
       key: scaffoldKey,
       appBar: CostomAppBar(scaffoldKey: scaffoldKey),
       drawer: const AppDrawer(),
-      body: const Record(),
+      body: ListView.builder(
+        itemCount: item.length,
+        itemBuilder: (context, index) {
+          return Text(item[index]);
+        },
+      ),
     );
   }
 }
