@@ -6,13 +6,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
 
 class TimerModel extends HookConsumerWidget {
-  const TimerModel({super.key});
-
+  TimerModel({super.key});
+  Timer? timer;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cancelFlg = useState(false);
     final counter = useState(0);
-    Timer? timer;
 
     void startTimer() {
       cancelFlg.value = true;
