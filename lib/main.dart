@@ -7,13 +7,9 @@ import 'package:url_strategy/url_strategy.dart';
 void main() async {
   //URLの末尾の#を消すため
   setPathUrlStrategy();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-        apiKey: "AIzaSyBVxakyR_Ipk-Y3NHQuvesxdmNm5D3bycA",
-        appId: "1:872023988105:web:b08f0cb00f20f982163358",
-        messagingSenderId: "872023988105",
-        projectId: "pool-a2005"),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const ProviderScope(child: App()));
 }
 

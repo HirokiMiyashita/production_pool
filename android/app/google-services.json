@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "872023988105",
+    "project_id": "pool-a2005",
+    "storage_bucket": "pool-a2005.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872023988105:android:a2b0e326051f4e27163358",
+        "android_client_info": {
+          "package_name": "com.example.production_pool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872023988105-ksh033mbloiogpu1clur7tgfrtq82dkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdtVm4vBamj2DITnsVNNXJxZJdJ47oW58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872023988105-ksh033mbloiogpu1clur7tgfrtq82dkf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "872023988105-bbehdq10rjef224fu4aeam1l4p0hkfoa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.narwhal.pool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
