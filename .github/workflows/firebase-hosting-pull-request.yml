@@ -12,14 +12,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+s
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
 
+      - name: Verify Flutter version
+        run: flutter --version
+
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Print Flutter SDK path
+        run: echo $PATH
 
       - name: Build Flutter web
         run: flutter build web
