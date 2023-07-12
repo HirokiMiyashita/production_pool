@@ -32,6 +32,6 @@ GoRouter routing(RoutingRef ref) {
           pageBuilder: (context, state) {
             return MaterialPage(child: Timer());
           },
-        )
+        ),
       ]);
 }

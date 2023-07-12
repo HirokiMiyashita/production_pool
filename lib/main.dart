@@ -4,11 +4,15 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:production_pool/router/routing_provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'firebase_options.dart';
+
 void main() async {
   //URLの末尾の#を消すため
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const ProviderScope(child: App()));
 }

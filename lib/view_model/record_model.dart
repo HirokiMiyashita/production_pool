@@ -1,5 +1,7 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:math' as math;
 
 import '../view/recode.dart';
 
@@ -14,11 +16,12 @@ class RecordModel extends StatelessWidget {
         if (snapshot.hasData) {
           // データが利用可能な場合の処理
           final documents = snapshot.data!.docs;
-          final test = [];
+          final List<double> test = [];
           for (int index = 0; index < documents.length; index++) {
             final data = documents[index].data();
-            test.add(data['time']); // testリストに値を追加
+            test.add(double.parse(data['time'])); // testリストに値を追加
           }
+          print(test[0].runtimeType);
           return Recode(
             item: test,
           );

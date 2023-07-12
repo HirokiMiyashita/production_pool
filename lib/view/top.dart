@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../component/app_bar.dart';
-import '../component/drawer.dart';
+import '../component/_common/app_bar.dart';
+import '../component/_common/drawer.dart';
 import '../view_model/timer_model.dart';
 
 class Timer extends HookConsumerWidget {

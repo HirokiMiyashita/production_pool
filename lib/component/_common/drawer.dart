@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../constant/main_root_config.dart';
+import '../../constant/main_root_config.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
