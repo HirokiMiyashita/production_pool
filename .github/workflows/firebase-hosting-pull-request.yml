@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
+        run: flutter pub get
         run: flutter build web
 
       - name: Sync build directory
