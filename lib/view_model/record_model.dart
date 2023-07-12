@@ -1,7 +1,5 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'dart:math' as math;
 
 import '../view/recode.dart';
 
@@ -21,7 +19,6 @@ class RecordModel extends StatelessWidget {
             final data = documents[index].data();
             test.add(double.parse(data['time'])); // testリストに値を追加
           }
-          print(test[0].runtimeType);
           return Recode(
             item: test,
           );

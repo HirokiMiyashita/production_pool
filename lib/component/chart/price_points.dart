@@ -8,7 +8,6 @@ class PricePoint {
 }
 
 List<PricePoint> getPricePoints(List<double> data) {
-  print(data);
   return data
       .mapIndexed(
           ((index, element) => PricePoint(x: index.toDouble(), y: element)))
