@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      run: |
-          ls -R
-          rsync -avz --delete ./build/web/ ./public/
-          ls -R
+      run:  
+        rsync -avz --delete ./build/web/ ./public/
+          
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
