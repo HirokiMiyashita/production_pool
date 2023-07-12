@@ -13,10 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Flutter SDK
+        uses: subosito/flutter-action@v2
+
         with:
-          node-version: 14
+          flutter-version: '3.10.5'  # Flutterのバージョンを指定してください
+          channel: 'stable'
+          cache: true
 
       - name: Verify Flutter version
         run: flutter --version
