@@ -8,10 +8,13 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v3
       - uses: FirebaseExtended/action-hosting-deploy@v0
-      run: 
-          rsync -avz --delete ./build/web/ ./public/
+
+      - name: Sync build directory
+        run: rsync -avz --delete ./build/web/ ./public/
+        
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_POOL_A2005 }}'
