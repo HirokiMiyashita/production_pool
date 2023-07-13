@@ -33,6 +33,7 @@ class TimerModel extends HookConsumerWidget {
         onTap: () {},
         child: Image.asset(
           'assets/images/top_banner.png',
+          colorBlendMode: BlendMode.srcOver,
         ),
       ),
       Column(
