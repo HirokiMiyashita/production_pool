@@ -7,11 +7,10 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class TimerModel extends HookConsumerWidget {
-  const TimerModel({super.key});
-
+  TimerModel({super.key});
+  Timer? timer;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Timer? timer;
     final cancelFlg = useState(false);
     final counter = useState(0);
 
@@ -37,14 +36,12 @@ class TimerModel extends HookConsumerWidget {
           colorBlendMode: kIsWeb ? BlendMode.src : BlendMode.clear,
         ),
       ),
-      Container(
-        child: Text(counter.value.toString()),
-
-        // child: Lottie.asset(
-        //   'assets/jsons/7731-water-loading.json',
-        //   repeat: cancelFlg.value,
-        //   animate: cancelFlg.value,
-        // ),
+      SizedBox(
+        height: 150,
+        child: Text(
+          counter.value.toString(),
+          style: const TextStyle(fontSize: 48),
+        ),
       ),
       Container(
         alignment: Alignment.bottomCenter,
@@ -87,9 +84,6 @@ class TimerModel extends HookConsumerWidget {
           ),
         ),
       ),
-      const SizedBox(
-        height: 60,
-      )
     ]);
   }
 }
