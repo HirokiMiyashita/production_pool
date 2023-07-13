@@ -37,14 +37,14 @@ class TimerModel extends HookConsumerWidget {
           colorBlendMode: kIsWeb ? BlendMode.src : BlendMode.clear,
         ),
       ),
-      Column(
-        children: [
-          Lottie.asset(
-            'assets/jsons/7731-water-loading.json',
-            repeat: cancelFlg.value,
-            animate: cancelFlg.value,
-          ),
-        ],
+      Container(
+        child: Text(counter.value.toString()),
+
+        // child: Lottie.asset(
+        //   'assets/jsons/7731-water-loading.json',
+        //   repeat: cancelFlg.value,
+        //   animate: cancelFlg.value,
+        // ),
       ),
       Container(
         alignment: Alignment.bottomCenter,
