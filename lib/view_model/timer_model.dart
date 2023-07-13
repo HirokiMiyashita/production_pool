@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class TimerModel extends HookConsumerWidget {
   const TimerModel({super.key});
@@ -33,7 +34,7 @@ class TimerModel extends HookConsumerWidget {
         onTap: () {},
         child: Image.asset(
           'assets/images/top_banner.png',
-          colorBlendMode: BlendMode.srcOver,
+          colorBlendMode: kIsWeb ? BlendMode.src : BlendMode.clear,
         ),
       ),
       Column(
