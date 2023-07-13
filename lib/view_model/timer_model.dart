@@ -33,7 +33,6 @@ class TimerModel extends HookConsumerWidget {
         onTap: () {},
         child: Image.asset(
           'assets/images/top_banner.png',
-          colorBlendMode: kIsWeb ? BlendMode.src : BlendMode.clear,
         ),
       ),
       SizedBox(
