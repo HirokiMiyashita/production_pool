@@ -6,6 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
+import '../infrastructure/set_data.dart';
+
 class TimerModel extends HookConsumerWidget {
   TimerModel({super.key});
   Timer? timer;
@@ -72,8 +74,12 @@ class TimerModel extends HookConsumerWidget {
             borderRadius: BorderRadius.circular(40),
           ),
         ),
-        onPressed: () {
-          !cancelFlg.value ? startTimer() : stopTimer();
+        onPressed: () async {
+          stopTimer();
+          User user = User(
+              countTime: counter.value.toString(), dateTime: DateTime.now());
+          UserRepository userRepository = UserRepository();
+          await userRepository.addUser(user);
         },
         child: const Padding(
           padding: EdgeInsets.only(left: 40.0, right: 40.0, top: 4, bottom: 4),

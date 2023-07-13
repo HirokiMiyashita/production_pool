@@ -23,7 +23,7 @@ GoRouter routing(RoutingRef ref) {
           path: MainRoute.record.path,
           name: MainRoute.record.name,
           pageBuilder: (context, state) {
-            return const MaterialPage(child: RecordModel());
+            return MaterialPage(child: RecordModel());
           },
         ),
         GoRoute(
