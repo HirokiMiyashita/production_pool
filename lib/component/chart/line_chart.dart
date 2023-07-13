@@ -12,7 +12,8 @@ class LineChartWidget extends StatelessWidget {
       aspectRatio: 2,
       child: LineChart(
         LineChartData(
-          maxY: 50,
+          maxY: 150,
+          minY: 0,
           titlesData: const FlTitlesData(
               show: true,
               bottomTitles: AxisTitles(
@@ -36,7 +37,7 @@ class LineChartWidget extends StatelessWidget {
               leftTitles: AxisTitles(
                 sideTitles: SideTitles(
                   showTitles: true,
-                  interval: 10,
+                  interval: 50,
                   reservedSize: 40.0,
                 ),
               )),

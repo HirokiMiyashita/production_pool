@@ -7,11 +7,13 @@ import '../component/chart/price_points.dart';
 
 class Recode extends HookConsumerWidget {
   Recode({super.key, required this.item});
-  final List<double> item;
+  final List<Map<String, dynamic>> item;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    List<double> formatedItem =
+        item.map((entry) => entry["value"] as double).toList();
     return Scaffold(
       key: scaffoldKey,
       appBar: CostomAppBar(scaffoldKey: scaffoldKey),
@@ -21,7 +23,7 @@ class Recode extends HookConsumerWidget {
         child: Column(
           children: [
             const SizedBox(height: 16),
-            LineChartWidget(getPricePoints(item)),
+            LineChartWidget(getPricePoints(formatedItem)),
           ],
         ),
       ),

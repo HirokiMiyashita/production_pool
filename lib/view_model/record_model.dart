@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:production_pool/view/recode.dart';
 
 import '../infrastructure/get_data.dart';
 
@@ -51,21 +52,7 @@ class RecordModel extends StatelessWidget {
           }
           print(mergedList);
 
-          return Scaffold(
-            // Scaffoldを使用する
-            appBar: AppBar(
-              title: Text('Users'),
-            ),
-            body: ListView.builder(
-              itemCount: users.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(users[index].countTime),
-                  subtitle: Text(users[index].dateTime.toString()),
-                );
-              },
-            ),
-          );
+          return Recode(item: mergedList);
         } else {
           // データがない場合の処理
           return const Text('データがありません');
